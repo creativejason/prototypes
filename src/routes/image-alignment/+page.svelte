@@ -1,17 +1,13 @@
 <script>
-	import defaultImage from '$lib/images/samples/ad-astra.jpg';
-
+	
 	const variationMin = 500;
 	const sampleWidth = 32;
 	const sampleHeight = 18;
 	const imageModules = import.meta.glob(
-		/*'../../../static/images/*.jpg',*/
 		'/src/lib/images/samples/*.jpg',
-		{
-			eager: true
-		}
+		{eager: true}
 	);
-
+	
 	/* State */
 	let selectedImage = $state();
 	let alignment = $derived(selectedImage ? getBestAlignment(selectedImage) : null);
@@ -19,8 +15,9 @@
 	/* Component mounting */
 	$effect(() => {
 		const img = new Image();
-		img.src = defaultImage;
+		img.src = Object.keys(imageModules)[0];
 		selectedImage = img;
+
 	});
 
 	/* Utils */
@@ -113,6 +110,7 @@
 	const onSampleSelect = (e) => {
 		selectedImage = e.target;
 	};
+	
 </script>
 
 <svelte:head>
