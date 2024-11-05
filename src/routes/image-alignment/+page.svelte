@@ -1,9 +1,11 @@
 <script>
 	
+	import defaultImage from '$lib/images/samples/ad-astra.jpg';
+
 	const variationMin = 500;
 	const sampleWidth = 32;
 	const sampleHeight = 18;
-	const imageModules = import.meta.glob(
+	const sampleImageModules = import.meta.glob(
 		'/src/lib/images/samples/*.jpg',
 		{eager: true}
 	);
@@ -15,7 +17,7 @@
 	/* Component mounting */
 	$effect(() => {
 		const img = new Image();
-		img.src = Object.keys(imageModules)[0];
+		img.src = defaultImage;
 		selectedImage = img;
 
 	});
@@ -110,7 +112,6 @@
 	const onSampleSelect = (e) => {
 		selectedImage = e.target;
 	};
-	
 </script>
 
 <svelte:head>
@@ -133,7 +134,7 @@
 	</div>
 
 	<div class="samples">
-		{#each Object.entries(imageModules) as [_path, module]}
+		{#each Object.entries(sampleImageModules) as [_path, module]}
 			<img src={module.default} alt="some alt text" onclick={onSampleSelect} />
 		{/each}
 	</div>
