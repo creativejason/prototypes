@@ -10,7 +10,7 @@
 		/*--height:calc(100vw/2*3);*/
 		width: 100vw;
 		height: 100vw;
-		background-image: url('images/responsive-details/poster.jpg');
+		background-image: url('./images/responsive-details/poster.jpg');
 		mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 		mask-size: 100% 100%;
 		background-size: 100% auto;
@@ -22,7 +22,7 @@
     @media (min-width: 600px), (height <= 700px) {
         .artwork{
             height: calc(100vw/16*9);
-            background-image: url('images/responsive-details/background.jpg');
+            background-image: url('./images/responsive-details/background.jpg');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
         }
     }
