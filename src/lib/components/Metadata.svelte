@@ -2,7 +2,7 @@
     import { Icon } from '@steeze-ui/svelte-icon';
 	import { BookmarkFilled, Star, StarFilled } from '@steeze-ui/carbon-icons';
 	import Button from './Button.svelte';
-	import Badge from './badge.svelte';
+	import Badge from './Badge.svelte';
 	
 </script>
 
